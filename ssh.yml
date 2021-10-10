@@ -1,0 +1,9 @@
+- hosts: all
+tasks:
+  - name: ssh
+  become: true
+  become_user: root
+  become_method: su
+  aurhorized_key:
+    user: root
+    key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
